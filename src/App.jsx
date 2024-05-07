@@ -1,27 +1,18 @@
 import { useState } from 'react'
 import './index.scss';
+import {Modal} from "./components/Modal.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [open, setOpen] = useState(false)
 
-  const onClickPlus = () => {
-    setCount(count + 1)
-  }
-  const onClickMinus = () => {
-    setCount(count - 1)
-  }
-  return (
-    <>
-      <div className="App">
-        <div>
-          <h2>Счетчик:</h2>
-          <h1>{count}</h1>
-          <button className="minus" onClick={onClickMinus}>- Минус</button>
-          <button className="plus" onClick={onClickPlus}>Плюс +</button>
-        </div>
-      </div>
-    </>
-  )
+	return (
+		<>
+			<div className="App">
+				<button className="open-modal-btn" onClick={() => setOpen(true)}>✨ Открыть окно</button>
+				<Modal open={open} setOpen={setOpen}></Modal>
+			</div>
+		</>
+	)
 }
 
 export default App
