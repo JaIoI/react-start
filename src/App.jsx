@@ -9,7 +9,9 @@ function App() {
 		<>
 			<div className="App">
 				<button className="open-modal-btn" onClick={() => setOpen(true)}>✨ Открыть окно</button>
-				<Modal open={open} setOpen={setOpen}></Modal>
+				<Modal open={open} setOpen={setOpen}>
+					<h3>Content</h3>
+				</Modal>
 			</div>
 		</>
 	)
